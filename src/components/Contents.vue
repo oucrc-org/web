@@ -1,6 +1,6 @@
 <template>
     <ul uk-accordion="multiple:true" class="uk-list">
-        <li class="uk-padding-small">
+        <li class="uk-padding-small uk-open">
             <a class="uk-accordion-title" href="#"><span uk-icon="user" class="uk-margin-small-right"></span>新入生の方へ</a>
             <div class="uk-accordion-content">
                 <div>4月中は新入生向けのイベントを開催する予定なので、興味のある方はぜひ遊びに来てください！</div>
