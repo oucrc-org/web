@@ -102,7 +102,7 @@
                         </thead>
                         <tbody>
                         <tr v-for="(member,index) in ob_members" v-bind:key="index">
-                            <td v-if="member.page !== ''"><a v-bind:href="'/members/' + member.page + '.html'">{{member.name}}</a></td>
+                            <td v-if="member.page !== ''"><a v-bind:href="'/members/' + member.page + '.html'" target="_blank" rel="noopener noreferrer">{{member.name}}</a></td>
                             <td v-if="member.page === ''">{{member.name}}</td>
                             <td>{{member.year}}</td>
                         </tr>
