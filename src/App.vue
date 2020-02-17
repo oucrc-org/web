@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="uk-width-2-3@m uk-align-center uk-margin-remove-top">
+    <div id="app" class="uk-width-xxlarge@m uk-align-center uk-margin-remove-top">
         <Header/>
         <Top/>
         <Contents/>
