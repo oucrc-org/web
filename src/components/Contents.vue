@@ -4,13 +4,14 @@
             <a class="uk-accordion-title" href="#"><span uk-icon="user" class="uk-margin-small-right"></span>新入生の方へ</a>
             <div class="uk-accordion-content">
                 <div>4月中は新入生向けのイベントを開催する予定なので、興味のある方はぜひ遊びに来てください！</div>
-<!--                2020/02/17 イベントが決まり次第追記-->
-<!--                <ul class="uk-list uk-margin uk-margin-bottom">-->
-<!--                    <li>4/2 10:00~ イベント1</li>-->
-<!--                    <li>4/3 11:00~ イベント2</li>-->
-<!--                    <li>4/6 10:00~ イベント3</li>-->
-<!--                </ul>-->
-<!--                <div>上記イベント以外の日でも部員はいるので、気軽に部室見学にお越しください！</div>-->
+                <ul class="uk-list uk-margin uk-margin-bottom">
+                    <li>4/3 13:00~ coming soon</li>
+                    <li>4/6 13:00~ coming soon</li>
+                    <li>4/7 13:00~ スマホアプリ開発体験会</li>
+                </ul>
+                <div>上記イベント以外の日でも部員はいるので、気軽に部室見学にお越しください！</div>
+                <div class="uk-margin-top"><a href="https://forms.gle/M1XJeULJGx9r2MMC9">こちら</a>のアンケートに予め回答していただけると、サークル見学をスムーズに行うことができます！
+                </div>
             </div>
         </li>
         <li class="uk-padding-small">
@@ -102,7 +103,9 @@
                         </thead>
                         <tbody>
                         <tr v-for="(member,index) in ob_members" v-bind:key="index">
-                            <td v-if="member.page !== ''"><a v-bind:href="'/members/' + member.page + '.html'" target="_blank" rel="noopener noreferrer">{{member.name}}</a></td>
+                            <td v-if="member.page !== ''"><a v-bind:href="'/members/' + member.page + '.html'"
+                                                             target="_blank"
+                                                             rel="noopener noreferrer">{{member.name}}</a></td>
                             <td v-if="member.page === ''">{{member.name}}</td>
                             <td>{{member.year}}</td>
                         </tr>
@@ -120,7 +123,7 @@
 
     export default {
         name: "Contents.vue",
-        data: function() {
+        data: function () {
             return {
                 active_members: members,
                 ob_members: ob
