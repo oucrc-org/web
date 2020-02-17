@@ -3,13 +3,14 @@
         <li class="uk-padding-small">
             <a class="uk-accordion-title" href="#"><span uk-icon="user" class="uk-margin-small-right"></span>新入生の方へ</a>
             <div class="uk-accordion-content">
-                <div>4月中は新入生向けのイベントを開催するので、興味のある方はぜひ遊びに来てください！</div>
-                <ul class="uk-list uk-margin uk-margin-bottom">
-                    <li>4/2 10:00~ イベント1</li>
-                    <li>4/3 11:00~ イベント2</li>
-                    <li>4/6 10:00~ イベント3</li>
-                </ul>
-                <div>上記イベント以外の日でも部員はいるので、気軽に部室見学にお越しください！</div>
+                <div>4月中は新入生向けのイベントを開催する予定なので、興味のある方はぜひ遊びに来てください！</div>
+<!--                2020/02/17 イベントが決まり次第追記-->
+<!--                <ul class="uk-list uk-margin uk-margin-bottom">-->
+<!--                    <li>4/2 10:00~ イベント1</li>-->
+<!--                    <li>4/3 11:00~ イベント2</li>-->
+<!--                    <li>4/6 10:00~ イベント3</li>-->
+<!--                </ul>-->
+<!--                <div>上記イベント以外の日でも部員はいるので、気軽に部室見学にお越しください！</div>-->
             </div>
         </li>
         <li class="uk-padding-small">
@@ -47,7 +48,7 @@
         <li class="uk-padding-small">
             <a class="uk-accordion-title" href="#"><span uk-icon="desktop" class="uk-margin-small-right"></span>作業環境</a>
             <div class="uk-accordion-content">
-                <div>部室には、部員の創作活動を支援するための様々な設備があります。（写真つきで載せる予定）</div>
+                <div>部室には、部員の創作活動を支援するための様々な設備があります。</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
                     <li>PC</li>
                     <li>3Dプリンター</li>
@@ -55,7 +56,6 @@
                     <li>VR</li>
                     <li>息抜き用のゲーム</li>
                     <li>息抜き用の漫画</li>
-                    <li></li>
                 </ul>
             </div>
         </li>
@@ -124,7 +124,6 @@
             return {
                 active_members: members,
                 ob_members: ob
-
             }
         }
     }
