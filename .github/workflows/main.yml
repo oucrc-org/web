@@ -1,17 +1,31 @@
-name: CI
+name: Deploy
 
-on: [push]
+on: 
+  push:
+    branches: 
+      - master
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - uses: actions/checkout@master
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Install Dependencies
+      run: npm install
+    - name: Build
+      run: npm run build
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: oucrc.net
+        FTP_USERNAME: oucrc
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        LOCAL_DIR: dist
+        REMOTE_DIR: home/oucrc/www
+        ARGS: --delete
+    
