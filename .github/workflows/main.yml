@@ -26,6 +26,5 @@ jobs:
         FTP_USERNAME: oucrc
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         LOCAL_DIR: dist
-        REMOTE_DIR: home/oucrc/www
         ARGS: --delete
     
