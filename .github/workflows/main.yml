@@ -22,10 +22,10 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
-        FTP_SERVER: oucrc.net
+        FTP_SERVER: oucrc.sakura.ne.jp
         FTP_USERNAME: oucrc
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         LOCAL_DIR: dist
-        REMOTE_DIR: home/oucrc/www
+        REMOTE_DIR: www
         ARGS: --delete --verbose	
     
