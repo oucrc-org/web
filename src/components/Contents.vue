@@ -59,9 +59,23 @@
             </div>
         </li>
         <li class="uk-padding-small">
+            <a class="uk-accordion-title" href="#"><span uk-icon="question" class="uk-margin-small-right"></span>よくある質問</a>
+            <div class="uk-accordion-content">
+                <ul class="uk-list uk-margin uk-margin-bottom">
+                    <li>Q. 部室を利用可能な時間帯を教えてください。</li>
+                    <li>A. 平日は 8:30 ~ 22:00 日祝は 8:30 ~ 18:00 です。 </li>
+                </ul>
+                <ul class="uk-list uk-margin uk-margin-bottom">
+                    <li>Q. 部費を教えてください。</li>
+                    <li>A. 半年で5000円です。（部内の備品購入のため） </li>
+                </ul>
+                <div>その他ご不明点がございましたら<a href="https://twitter.com/oucrc">こちら</a>までご連絡ください</div>
+            </div>
+        </li>
+        <li class="uk-padding-small">
             <a class="uk-accordion-title" href="#"><span uk-icon="users" class="uk-margin-small-right"></span>部員</a>
             <div class="uk-accordion-content">
-                <div>部室には、部員の創作活動を支援するための様々な設備があります。（写真つきで載せる予定）</div>
+                <div></div>
             </div>
         </li>
     </ul>
