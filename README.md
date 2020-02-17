@@ -1,24 +1,10 @@
 # oucrcのホームページ
 
-## Project setup
-```
-npm install
-```
+## ディレクトリ構成
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+|ディレクトリ名|役割|
+|---|---|
+|.github|Github Actions の設定ファイルを格納|
+|public|ビルドすることなくそのまま公開するファイル|
+|src/assets|画像ファイル、音声ファイル等|
+|src/components|vueのソースコードを置くところ、主に編集するのはここ|
