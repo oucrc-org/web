@@ -13,7 +13,8 @@
             </div>
         </li>
         <li class="uk-padding-small">
-            <a class="uk-accordion-title" href="#"><span uk-icon="file-edit" class="uk-margin-small-right"></span>活動内容</a>
+            <a class="uk-accordion-title" href="#"><span uk-icon="file-edit"
+                                                         class="uk-margin-small-right"></span>活動内容</a>
             <div class="uk-accordion-content">
                 <div>このサークルでは主に、「PC等を使ったものづくり」を行っています。具体的には、以下のようなものが該当します。</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
@@ -23,13 +24,13 @@
                     <li>Unityを用いたゲーム作成</li>
                     <li>画像、動画編集</li>
                     <li>電子工作...etc.</li>
-                    <li></li>
                 </ul>
                 <div>作った作品を学祭で展示したり、コミケで頒布することもあります。</div>
             </div>
         </li>
         <li class="uk-padding-small">
-            <a class="uk-accordion-title" href="#"><span uk-icon="location" class="uk-margin-small-right"></span>活動場所</a>
+            <a class="uk-accordion-title" href="#"><span uk-icon="location"
+                                                         class="uk-margin-small-right"></span>活動場所</a>
             <div class="uk-accordion-content">
                 <div>クラブ棟2階の一番奥、209号室にある部室で活動しています。</div>
                 <iframe class="uk-margin"
@@ -63,27 +64,69 @@
             <div class="uk-accordion-content">
                 <ul class="uk-list uk-margin uk-margin-bottom">
                     <li>Q. 部室を利用可能な時間帯を教えてください。</li>
-                    <li>A. 平日は 8:30 ~ 22:00 日祝は 8:30 ~ 18:00 です。 </li>
+                    <li>A. 平日は 8:30 ~ 22:00 日祝は 8:30 ~ 18:00 です。</li>
                 </ul>
                 <ul class="uk-list uk-margin uk-margin-bottom">
                     <li>Q. 部費を教えてください。</li>
-                    <li>A. 半年で5000円です。（部内の備品購入のため） </li>
+                    <li>A. 半年で5000円です。（部内の備品購入のため）</li>
                 </ul>
                 <div>その他ご不明点がございましたら<a href="https://twitter.com/oucrc">こちら</a>までご連絡ください</div>
             </div>
         </li>
         <li class="uk-padding-small">
-            <a class="uk-accordion-title" href="#"><span uk-icon="users" class="uk-margin-small-right"></span>部員</a>
+            <a class="uk-accordion-title" href="#"><span uk-icon="users" class="uk-margin-small-right"></span>部員一覧</a>
             <div class="uk-accordion-content">
-                <div></div>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <caption>部員一覧</caption>
+                        <thead>
+                        <tr>
+                            <th>名前</th>
+                            <th>ひとこと</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(member,index) in active_members" v-bind:key="index">
+                            <td>{{member.name}}</td>
+                            <td>{{member.comment}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="uk-table uk-table-divider">
+                        <caption>OB一覧</caption>
+                        <thead>
+                        <tr>
+                            <th>名前</th>
+                            <th>入学年</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(member,index) in ob_members" v-bind:key="index">
+                            <td v-if="member.page !== ''"><a v-bind:href="'/members/' + member.page + '.html'">{{member.name}}</a></td>
+                            <td v-if="member.page === ''">{{member.name}}</td>
+                            <td>{{member.year}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </li>
     </ul>
 </template>
 
 <script>
+    import members from '../assets/json/active_members'
+    import ob from '../assets/json/ob'
+
     export default {
         name: "Contents.vue",
+        data: function() {
+            return {
+                active_members: members,
+                ob_members: ob
+
+            }
+        }
     }
 </script>
 

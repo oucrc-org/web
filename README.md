@@ -1,4 +1,4 @@
-# oucrc
+# oucrcのホームページ
 
 ## Project setup
 ```

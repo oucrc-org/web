@@ -1,5 +1,5 @@
 <template>
-    <img src="../assets/top.png" alt="トップ画像" uk-img>
+    <img src="../assets/img/top.png" alt="トップ画像" uk-img>
 </template>
 
 <script>
