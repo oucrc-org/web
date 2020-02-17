@@ -1,7 +1,8 @@
 <template>
     <ul uk-accordion="multiple:true" class="uk-list uk-list-divider">
         <li class="uk-open">
-            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="user" class="uk-margin-small-right"></span>新入生の方へ</a>
+            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="user"
+                                                                          class="uk-margin-small-right"></span>新入生の方へ</a>
             <div class="uk-accordion-content uk-padding-small">
                 <div>4月中は新入生向けのイベントを開催する予定なので、興味のある方はぜひ遊びに来てください！</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
@@ -14,8 +15,9 @@
                 </div>
             </div>
         </li>
-        <li>
-            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="file-edit" class="uk-margin-small-right"></span>活動内容</a>
+        <li v-bind:class="{'uk-open' : wide}">
+            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="file-edit"
+                                                                          class="uk-margin-small-right"></span>活動内容</a>
             <div class="uk-accordion-content uk-padding-small">
                 <div>このサークルでは主に、「PC等を使ったものづくり」を行っています。具体的には、以下のようなものが該当します。</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
@@ -29,9 +31,9 @@
                 <div>作った作品を学祭で展示したり、コミケで頒布することもあります。</div>
             </div>
         </li>
-        <li>
+        <li v-bind:class="{'uk-open' : wide}">
             <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="location"
-                                                         class="uk-margin-small-right"></span>活動場所</a>
+                                                                          class="uk-margin-small-right"></span>活動場所</a>
             <div class="uk-accordion-content uk-padding-small">
                 <div>クラブ棟2階の一番奥、209号室にある部室で活動しています。</div>
                 <iframe class="uk-margin"
@@ -39,14 +41,18 @@
                         width="100%" height="300" style="border:0;" allowfullscreen=""></iframe>
             </div>
         </li>
-        <li>
-            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="clock" class="uk-margin-small-right"></span>活動時間</a>
+        <li v-bind:class="{'uk-open' : wide}">
+
+            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="clock"
+                                                                          class="uk-margin-small-right"></span>活動時間</a>
             <div class="uk-accordion-content uk-padding-small">
                 <div>毎週水曜日の15時から定期的な連絡のための部会を行っています。それ以外は特に決まったスケジュールもなく、空きコマや放課後などの空いた時間に気ままにやってきて活動をしています。</div>
             </div>
         </li>
-        <li>
-            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="desktop" class="uk-margin-small-right"></span>作業環境</a>
+        <li v-bind:class="{'uk-open' : wide}">
+
+            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="desktop"
+                                                                          class="uk-margin-small-right"></span>作業環境</a>
             <div class="uk-accordion-content uk-padding-small">
                 <div>部室には、部員の創作活動を支援するための様々な設備があります。</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
@@ -59,8 +65,10 @@
                 </ul>
             </div>
         </li>
-        <li>
-            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="question" class="uk-margin-small-right"></span>よくある質問</a>
+        <li v-bind:class="{'uk-open' : wide}">
+
+            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="question"
+                                                                          class="uk-margin-small-right"></span>よくある質問</a>
             <div class="uk-accordion-content uk-padding-small">
                 <ul class="uk-list uk-margin uk-margin-bottom">
                     <li>Q. 部室を利用可能な時間帯を教えてください。</li>
@@ -73,8 +81,9 @@
                 <div>その他ご不明点がございましたら<a href="https://twitter.com/oucrc">こちら</a>までご連絡ください</div>
             </div>
         </li>
-        <li>
-            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="users" class="uk-margin-small-right"></span>部員一覧</a>
+        <li v-bind:class="{'uk-open' : wide}">
+            <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="users"
+                                                                          class="uk-margin-small-right"></span>部員一覧</a>
             <div class="uk-accordion-content uk-padding-small">
                 <div class="uk-overflow-auto">
                     <table class="uk-table uk-table-divider">
@@ -125,8 +134,12 @@
         data: function () {
             return {
                 active_members: members,
-                ob_members: ob
+                ob_members: ob,
+                wide: false,
             }
+        },
+        mounted: function () {
+            this.wide = window.innerWidth >= 800
         }
     }
 </script>
