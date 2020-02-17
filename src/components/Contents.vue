@@ -1,7 +1,7 @@
 <template>
     <ul uk-accordion="multiple:true" class="uk-list">
         <li class="uk-padding-small">
-            <a class="uk-accordion-title" href="#">新入生の方へ</a>
+            <a class="uk-accordion-title" href="#"><span uk-icon="user" class="uk-margin-small-right"></span>新入生の方へ</a>
             <div class="uk-accordion-content">
                 <div>4月中は新入生向けのイベントを開催するので、興味のある方はぜひ遊びに来てください！</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
@@ -13,7 +13,7 @@
             </div>
         </li>
         <li class="uk-padding-small">
-            <a class="uk-accordion-title" href="#">活動内容</a>
+            <a class="uk-accordion-title" href="#"><span uk-icon="file-edit" class="uk-margin-small-right"></span>活動内容</a>
             <div class="uk-accordion-content">
                 <div>このサークルでは主に、「PC等を使ったものづくり」を行っています。具体的には、以下のようなものが該当します。</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
@@ -29,7 +29,7 @@
             </div>
         </li>
         <li class="uk-padding-small">
-            <a class="uk-accordion-title" href="#">活動場所</a>
+            <a class="uk-accordion-title" href="#"><span uk-icon="location" class="uk-margin-small-right"></span>活動場所</a>
             <div class="uk-accordion-content">
                 <div>クラブ棟2階の一番奥、209号室にある部室で活動しています。</div>
                 <iframe class="uk-margin"
@@ -38,49 +38,38 @@
             </div>
         </li>
         <li class="uk-padding-small">
-            <a class="uk-accordion-title" href="#">活動時間</a>
+            <a class="uk-accordion-title" href="#"><span uk-icon="clock" class="uk-margin-small-right"></span>活動時間</a>
             <div class="uk-accordion-content">
-                <div>毎週水曜日の15時に定期的な連絡のための部会を行っています。それ以外は特に決まったスケジュールもなく、空きコマや放課後などのあいた時間に気ままにやってきて活動をしています。</div>
+                <div>毎週水曜日の15時から定期的な連絡のための部会を行っています。それ以外は特に決まったスケジュールもなく、空きコマや放課後などの空いた時間に気ままにやってきて活動をしています。</div>
+            </div>
+        </li>
+        <li class="uk-padding-small">
+            <a class="uk-accordion-title" href="#"><span uk-icon="desktop" class="uk-margin-small-right"></span>作業環境</a>
+            <div class="uk-accordion-content">
+                <div>部室には、部員の創作活動を支援するための様々な設備があります。（写真つきで載せる予定）</div>
+                <ul class="uk-list uk-margin uk-margin-bottom">
+                    <li>PC</li>
+                    <li>3Dプリンター</li>
+                    <li>Adobe</li>
+                    <li>VR</li>
+                    <li>息抜き用のゲーム</li>
+                    <li>息抜き用の漫画</li>
+                    <li></li>
+                </ul>
+            </div>
+        </li>
+        <li class="uk-padding-small">
+            <a class="uk-accordion-title" href="#"><span uk-icon="users" class="uk-margin-small-right"></span>部員</a>
+            <div class="uk-accordion-content">
+                <div>部室には、部員の創作活動を支援するための様々な設備があります。（写真つきで載せる予定）</div>
             </div>
         </li>
     </ul>
 </template>
 
 <script>
-
     export default {
-        components: {},
         name: "Contents.vue",
-        data() {
-            return {
-                contents: [
-                    {
-                        title: "新入生の方へ",
-                        description: "Welcome!"
-                    },
-                    {
-                        title: "活動内容",
-                        description: "Welcome!"
-                    },
-                    {
-                        title: "活動場所",
-                        description: "Welcome!"
-                    },
-                    {
-                        title: "活動時間",
-                        description: "Welcome!"
-                    },
-                    {
-                        title: "設備",
-                        description: "Welcome!"
-                    },
-                    {
-                        title: "部員一覧",
-                        description: "Welcome!"
-                    },
-                ]
-            }
-        }
     }
 </script>
 
