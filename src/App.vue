@@ -2,18 +2,22 @@
   <div id="app">
     <Header/>
     <Top />
+    <Contents />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Header from './components/Header'
 import Top from './components/Top'
+import Contents from './components/Contents'
+
 
 export default {
   name: 'App',
   components: {
     Header,
-    Top
+    Top,
+    Contents
   }
 }
 </script>
