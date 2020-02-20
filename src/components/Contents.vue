@@ -55,13 +55,28 @@
                                                                           class="uk-margin-small-right"></span>作業環境</a>
             <div class="uk-accordion-content uk-padding-small">
                 <div>部室には、部員の創作活動を支援するための様々な設備があります。</div>
-                <ul class="uk-list uk-margin uk-margin-bottom">
-                    <li>PC</li>
-                    <li>3Dプリンター</li>
+                <ul class=" uk-margin uk-margin-bottom">
+                    <li>
+                        <img src="../assets/img/equip-1.png" alt="" uk-img>
+                        <p>PC</p>
+                    </li>
+                    <li>
+                        <img src="../assets/img/equip-2.png" alt="" uk-img>
+                        <p>3Dプリンター</p>
+                    </li>
                     <li>Adobe</li>
-                    <li>VR</li>
-                    <li>息抜き用のゲーム</li>
-                    <li>息抜き用の漫画</li>
+                    <li>
+                        <img src="../assets/img/equip-4.png" alt="" uk-img>
+                        <p>VR</p>
+                    </li>
+                    <li>
+                        <img src="../assets/img/equip-5.png" alt="" uk-img>
+                        <p>息抜き用のゲーム</p>
+                    </li>
+                    <li>
+                        <img src="../assets/img/equip-6.png" alt="" uk-img>
+                        <p>息抜き用の漫画</p>
+                    </li>
                 </ul>
             </div>
         </li>
@@ -86,17 +101,17 @@
                                                                           class="uk-margin-small-right"></span>部員一覧</a>
             <div class="uk-accordion-content uk-padding-small">
                 <div class="uk-overflow-auto">
-                    <table class="uk-table uk-table-divider">
+                    <table class="uk-table uk-table-divider uk-table-hover ">
                         <caption>部員一覧</caption>
                         <thead>
                         <tr>
-                            <th>名前</th>
+                            <th class="uk-width-medium">名前</th>
                             <th>ひとこと</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="(member,index) in active_members" v-bind:key="index">
-                            <td>{{member.name}}</td>
+                        <tr v-for="(member,index) in members" v-bind:key="index">
+                            <td>{{member.displayName}}</td>
                             <td>{{member.comment}}</td>
                         </tr>
                         </tbody>
@@ -113,9 +128,9 @@
                         <tr v-for="(member,index) in ob_members" v-bind:key="index">
                             <td v-if="member.page !== ''"><a v-bind:href="'/members/' + member.page + '.html'"
                                                              target="_blank"
-                                                             rel="noopener noreferrer">{{member.name}}</a></td>
-                            <td v-if="member.page === ''">{{member.name}}</td>
-                            <td>{{member.year}}</td>
+                                                             rel="noopener noreferrer">{{member.displayName}}</a></td>
+                            <td v-if="member.page === ''">{{member.displayName}}</td>
+                            <td>{{member.enter_year.slice(-4)}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -126,20 +141,27 @@
 </template>
 
 <script>
-    import members from '../assets/json/active_members'
-    import ob from '../assets/json/ob'
+    import axios from 'axios'
 
     export default {
         name: "Contents.vue",
         data: function () {
             return {
-                active_members: members,
-                ob_members: ob,
+                members: [],
+                ob_members: [],
                 wide: false,
             }
         },
         mounted: function () {
-            this.wide = window.innerWidth >= 800
+            this.wide = window.innerWidth >= 800;
+
+            axios
+                .get('https://script.googleusercontent.com/macros/echo?user_content_key=JCf1HO7IP01K1wzSm648YX8F4FcJdpviFGQOOVvdaOIDvUGC9XAxYxP0-PvCfh-2S7RBzA-v4fLo5JEkBF-JU9xlCU4-CZQAm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnMRAGFI0-QGNX4Jz3W7T99ugSi8BY1exrtLTYIGMKDoqQvibYMBWP39Ee6T_t52hW1XyIfAI_nNF&lib=MAZqi4sOZBdvkpEAXMFivKoPkYHNpZ28D')
+                .then(response => {
+                    this.members = response.data.filter((data => Number(data.status) === 1));
+                    this.ob_members = response.data.filter(data => Number(data.status) === 0);
+
+                })
         }
     }
 </script>
