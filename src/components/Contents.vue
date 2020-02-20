@@ -58,13 +58,12 @@
                 <ul class=" uk-margin uk-margin-bottom">
                     <li>
                         <img src="../assets/img/equip-1.png" alt="" uk-img>
-                        <p>PC</p>
+                        <p>PC（部室内に6台設置されています）</p>
                     </li>
                     <li>
                         <img src="../assets/img/equip-2.png" alt="" uk-img>
                         <p>3Dプリンター</p>
                     </li>
-                    <li>Adobe</li>
                     <li>
                         <img src="../assets/img/equip-4.png" alt="" uk-img>
                         <p>VR</p>
