@@ -4,11 +4,10 @@
             <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="user"
                                                                           class="uk-margin-small-right"></span>新入生の方へ</a>
             <div class="uk-accordion-content uk-padding-small">
-                <div>4月中は新入生向けのイベントを開催する予定なので、興味のある方はぜひ遊びに来てください！</div>
+                <div>新歓期間中は新入生向けのイベントを開催する予定なので、興味のある方はぜひ遊びに来てください！</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
-                    <li>4/3 13:00~ coming soon</li>
-                    <li>4/6 13:00~ coming soon</li>
-                    <li>4/7 13:00~ スマホアプリ開発体験会</li>
+                    <li>スマホアプリ開発体験会</li>
+                    <li>3Dプリンター体験</li>
                 </ul>
                 <div>上記イベント以外の日でも部員はいるので、気軽に部室見学にお越しください！</div>
                 <div class="uk-margin-top"><a href="https://forms.gle/M1XJeULJGx9r2MMC9">こちら</a>のアンケートに予め回答していただけると、サークル見学をスムーズに行うことができます！
