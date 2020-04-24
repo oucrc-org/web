@@ -4,7 +4,7 @@
             <a class="uk-accordion-title uk-padding-small" href="#"><span uk-icon="user"
                                                                           class="uk-margin-small-right"></span>新入生の方へ</a>
             <div class="uk-accordion-content uk-padding-small">
-                <div>新歓期間中は新入生向けのイベントを開催する予定なので、興味のある方はぜひ遊びに来てください！！</div>
+                <div>新歓期間中は新入生向けのイベントを開催する予定なので、興味のある方はぜひ遊びに来てください！</div>
                 <ul class="uk-list uk-margin uk-margin-bottom">
                     <li>スマホアプリ開発体験会</li>
                     <li>3Dプリンター体験</li>
