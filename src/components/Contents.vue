@@ -163,56 +163,10 @@
         },
         methods:{
             HTMLComment (value) {
-                //戻り値
-                let re="";
-
-                //一文字目から確認
-                for(let i=0;i<value.length;i++){
-                    let httpStart=value.indexOf("http",i);
-                    let twitterStart=value.indexOf("@",i);
-
-                    //URLの判定
-                    if(httpStart!==-1 && (twitterStart==-1 || httpStart<twitterStart) ){
-                        //スペースの認識
-                        let bigSpace=value.indexOf(" ",httpStart,i);
-                        let smallSpace=value.indexOf("　",httpStart,i);
-
-                        //URL終わりの設定
-                        let httpEnd = smallSpace!==-1?smallSpace:bigSpace;
-                        if(httpEnd==-1)httpEnd=value.length;
-
-                        //文字列の結合
-                        re+=value.substr(i,httpStart-i);
-                        re+="<a href=\"" +value.substr(httpStart,httpEnd-httpStart) +"\">"+value.substr(httpStart,httpEnd-httpStart)+"</a>";
-
-                        i=httpEnd-1;
-                    }
-
-                    //Twitterの判定
-                    if(twitterStart!==-1 && (httpStart==-1 || twitterStart<httpStart)){
-                        //スペースの認識
-                        let bigSpace=value.indexOf(" ",twitterStart,i);
-                        let smallSpace=value.indexOf("　",twitterStart,i);
-
-                        //名前終わりの設定
-                        let twitterEnd = smallSpace!==-1?smallSpace:bigSpace;
-                        if(twitterEnd==-1)twitterEnd=value.length;
-
-                        //文字列の結合
-                        re+=value.substr(i,twitterStart-i);
-                        re+="<a href=\"http://twitter.com/" +value.substr(twitterStart+1,twitterEnd-twitterStart-1) +"\">"+value.substr(twitterStart,twitterEnd-twitterStart)+"</a>";
-
-                        i=twitterEnd-1;
-                    }
-
-                    //どちらも含まれない時
-                    if(httpStart==-1 && twitterStart==-1){
-                        re+=value.substr(i,value.length-i);
-                        i=value.length;
-                    }
-                }
-
-                return re;
+                value=value.replace(/https?:\/\/[\w!?/\-_~=;.:,*&@#$%()'[\]]+/g, '<a href="$&">$&</a>');
+                value=value.replace(/@[\w\W_]+/g, '<a href="https://twitter.com/$&">$&</a>');
+                value=value.replace(/(?<=https:\/\/twitter.com\/)@+/g, '');
+                return value;
             }
         }
     }
