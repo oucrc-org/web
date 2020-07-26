@@ -110,7 +110,7 @@
                         <tbody>
                         <tr v-for="(member,index) in members" v-bind:key="index">
                             <td>{{member.displayName}}</td>
-                            <td>{{member.comment}}</td>
+                            <td v-html=HTMLComment(member.comment)></td>
                         </tr>
                         </tbody>
                     </table>
@@ -160,6 +160,14 @@
                     this.ob_members = response.data.filter(data => Number(data.status) === 0);
 
                 })
+        },
+        methods:{
+            HTMLComment (value) {
+                value=value.replace(/https?:\/\/[\w!?/\-_~=;.:,*&@#$%()'[\]]+/g, '<a href="$&">$&</a>');
+                value=value.replace(/@[\w\W_]+/g, '<a href="https://twitter.com/$&">$&</a>');
+                value=value.replace(/(?<=https:\/\/twitter.com\/)@+/g, '');
+                return value;
+            }
         }
     }
 </script>
