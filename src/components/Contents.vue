@@ -163,17 +163,11 @@
         },
         methods: {
             HTMLComment(value) {
-                if (!this.isSafari()) { // 正規表現の後読みを Safari で行おうとすると落ちます（参考：https://stackoverflow.com/questions/51568821/works-in-chrome-but-breaks-in-safari-invalid-regular-expression-invalid-group）
-                    value = value.replace(/https?:\/\/[\w!?/\-_~=;.:,*&@#$%()'[\]]+/g, '<a href="$&">$&</a>');
-                    value = value.replace(/@[\w\W_]+/g, '<a href="https://twitter.com/$&">$&</a>');
-                    value = value.replace(/(?<=https:\/\/twitter.com\/)@+/g, '');
-                }
+                value = value.replace(/https?:\/\/[\w!?/\-_~=;.:,*&@#$%()'[\]]+/g, '<a href="$&">$&</a>');
+                value = value.replace(/@[\w\W_]+/g, '<a href="https://twitter.com/$&">$&</a>');
+                //value = value.replace(/(?<=https:\/\/twitter.com\/)@+/g, ''); Safari で実行できない（評価の有無にかかわらずコードが存在していると落ちるっぽいので一旦コメントアウト）
                 return value;
             },
-            isSafari() {
-                const userAgent = window.navigator.userAgent.toLowerCase();
-                return (userAgent.indexOf('safari') !== -1);
-            }
         }
     }
 </script>
