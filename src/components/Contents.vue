@@ -161,12 +161,19 @@
 
                 })
         },
-        methods:{
-            HTMLComment (value) {
-                value=value.replace(/https?:\/\/[\w!?/\-_~=;.:,*&@#$%()'[\]]+/g, '<a href="$&">$&</a>');
-                value=value.replace(/@[\w\W_]+/g, '<a href="https://twitter.com/$&">$&</a>');
-                value=value.replace(/(?<=https:\/\/twitter.com\/)@+/g, '');
+        methods: {
+            HTMLComment(value) {
+                value = value.replace(/https?:\/\/[\w!?/\-_~=;.:,*&@#$%()'[\]]+/g, '<a href="$&">$&</a>');
+
+                if (!this.isSafari()) { // 正規表現の後読みを Safari で行おうとすると落ちます（参考：https://stackoverflow.com/questions/51568821/works-in-chrome-but-breaks-in-safari-invalid-regular-expression-invalid-group）
+                    value = value.replace(/@[\w\W_]+/g, '<a href="https://twitter.com/$&">$&</a>');
+                    value = value.replace(/(?<=https:\/\/twitter.com\/)@+/g, '');
+                }
                 return value;
+            },
+            isSafari() {
+                const userAgent = window.navigator.userAgent.toLowerCase();
+                return userAgent.indexOf('safari') !== -1;
             }
         }
     }
