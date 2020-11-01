@@ -4,7 +4,7 @@
             <span uk-icon="bell" class="uk-margin-small-right"></span>お知らせ
         </h1>
 
-        <div id="notice" class="uk-padding-small">
+        <div class="uk-padding-small">
             <ul class="uk-list uk-margin">
             <!--
                 特段の注意が必要な事項には
