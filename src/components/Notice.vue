@@ -16,9 +16,6 @@
                     <span uk-icon="info" class="uk-text-primary uk-margin-small-right"></span>
                     部室での活動を再開しました。見学の際は気軽にお越しください。<a href="https://hackmd.io/@leN8onDkQoKpjiihHJ5eAA/H1Mpzl3YU">【新入生向けの案内はこちら】</a>
                 </li>
-                <li>
-                    広報担当より。
-                </li>
             </ul>
         </div>
     </div>
