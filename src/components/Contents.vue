@@ -163,9 +163,9 @@
         },
         methods: {
             HTMLComment(value) {
+                value = value.replace(/https?:\/\/(?:mobile\.)?twitter\.com\/@?([\w\W_]+)/g, '@$1');
                 value = value.replace(/https?:\/\/[\w!?/\-_~=;.:,*&@#$%()'[\]]+/g, '<a href="$&">$&</a>');
-                value = value.replace(/@[\w\W_]+/g, '<a href="https://twitter.com/$&">$&</a>');
-                //value = value.replace(/(?<=https:\/\/twitter.com\/)@+/g, ''); Safari で実行できない（評価の有無にかかわらずコードが存在していると落ちるっぽいので一旦コメントアウト）
+                value = value.replace(/@([\w\W_]+)/g, '<a href="https://twitter.com/$1">$&</a>');
                 return value;
             },
         }
