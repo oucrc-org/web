@@ -1,5 +1,14 @@
 <template>
     <div>
+        <div>
+            <div class="uk-dark uk-background-muted uk-padding">
+                <h3>新入生の方へ</h3>
+                <p>部室に部員がいるかどうかリアルタイムで確認できるようになりました！</p>
+                <p>マスクを着用の上、気軽に遊びに来てください。</p>
+                <a class="uk-button uk-button-default" href="https://i10jan-api.herokuapp.com/v1.1">部室の状況</a>
+            </div>
+        </div>
+
         <h1 class="uk-h4 uk-padding-small">
             <span uk-icon="bell" class="uk-margin-small-right"></span>お知らせ
         </h1>
