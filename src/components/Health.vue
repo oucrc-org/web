@@ -80,6 +80,10 @@ export default {
         }
     },
     mounted() {
+        if (this.$cookies.get('MemberKey') !== undefined && this.$cookies.get('MemberKey') !== null) {
+            this.issetMember = true
+            this.memberKey = this.$cookies.get('MemberKey')
+        }
         axios
             .get('http://localhost/v1.1/personal/memberSelectAction')
             .then(response => {
@@ -95,11 +99,16 @@ export default {
             } else {
                 this.showAlert = false
                 this.issetMember = true
+                if (this.saveMemberKey) {
+                    this.$cookies.config(60 * 60 * 24 * 30, '')
+                    this.$cookies.set('MemberKey', this.memberKey)
+                }
             }
         },
         resetMember: function () {
             this.issetMember = false
             this.memberKey = 'initial'
+            this.$cookies.remove('MemberKey')
         },
         register: function () {
             if (this.temperature == null || this.temperature < 35 || this.temperature > 38) {
