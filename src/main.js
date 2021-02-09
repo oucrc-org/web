@@ -4,10 +4,13 @@ import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
 import 'uikit/dist/css/uikit.css'
 import 'uikit/dist/css/uikit.min.css'
+import router from "@/router";
+
 UIkit.use(Icons);
 
 Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
+    router,
+    render: h => h(App),
 }).$mount('#app');
