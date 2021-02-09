@@ -71,7 +71,7 @@ export default {
             handler: function () {
                 if (this.memberKey !== 'initial')
                     axios
-                        .get('http://localhost/v1.1/personal/inputTemperatureAction?member_key=' + this.memberKey)
+                        .get('https://i10jan-api.herokuapp.com/v1.1/personal/inputTemperatureAction?member_key=' + this.memberKey)
                         .then(response => {
                             if (response.data.success)
                                 this.memberName = response.data.data
@@ -85,7 +85,7 @@ export default {
             this.memberKey = this.$cookies.get('MemberKey')
         }
         axios
-            .get('http://localhost/v1.1/personal/memberSelectAction')
+            .get('https://i10jan-api.herokuapp.com/v1.1/personal/memberSelectAction')
             .then(response => {
                 if (response.data.success)
                     this.members = response.data.data
@@ -117,7 +117,7 @@ export default {
             } else {
                 this.showAlert = false
                 axios
-                    .post('http://localhost/v1.1/personal/registerAction?member_key=' + this.memberKey + '&body_temperature=' + this.temperature)
+                    .post('https://i10jan-api.herokuapp.com/v1.1/personal/registerAction?member_key=' + this.memberKey + '&body_temperature=' + this.temperature)
                     .then(response => {
                         if (response.data.success) {
                             this.temperature = null
