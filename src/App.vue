@@ -1,26 +1,17 @@
 <template>
     <div id="app" class="uk-width-xxlarge@m uk-align-center uk-margin-remove-top">
         <Header/>
-        <Top/>
-        <Notice/>
-        <Contents/>
+        <router-view/>
     </div>
 </template>
 
 <script>
     import Header from './components/Header'
-    import Top from './components/Top'
-    import Notice from './components/Notice'
-    import Contents from './components/Contents'
-
 
     export default {
         name: 'App',
         components: {
             Header,
-            Top,
-            Notice,
-            Contents
         }
     }
 </script>
