@@ -4,7 +4,7 @@
             <a class="uk-alert-close" uk-close @click="showAlert = false"></a>
             <p>{{ alert }}</p>
         </div>
-        <form v-if="issetMember">
+        <form @submit.prevent="register" v-if="issetMember">
             <fieldset class="uk-fieldset uk-text-center">
                 <legend class="uk-legend">体温を入力してください</legend>
 
@@ -12,10 +12,10 @@
 
                 <div class="uk-margin">
                     <input v-model="temperature" class="uk-input" type="number" max="38" min="35" step="0.1"
-                           placeholder="35.0 〜 38.0">
+                           placeholder="35.0 〜 38.0" required>
                 </div>
 
-                <a @click="register" class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom">完了</a>
+                <button type="submit" class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom">完了</button>
 
                 <a @click="resetMember" class="uk-link-reset uk-display-inline-block uk-margin-top">{{
                         memberName
