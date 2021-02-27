@@ -128,7 +128,7 @@
                                                              target="_blank"
                                                              rel="noopener noreferrer">{{member.displayName}}</a></td>
                             <td v-if="member.page === ''">{{member.displayName}}</td>
-                            <td>{{member.enter_year.slice(-4)}}</td>
+                            <td>{{member.enter_year.slice(0,4)}}</td>
                         </tr>
                         </tbody>
                     </table>
